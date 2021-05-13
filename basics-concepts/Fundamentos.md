@@ -67,7 +67,65 @@ public class Comments {
     }
 }
 ```
+
 ## Reading Input 
+Input refers to text written by the user read by the program. Input is always read as a string. For reading input, we use the Scanner tool that comes with Java. The tool can be imported for use in a program by adding the command import java.util.Scanner; before the beginning of the main program's frame (public class ...). The tool itself is created with Scanner scanner = new Scanner(System.in);.
+
+```java
+import java.util.Scanner;
+
+public class Program {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // We can now use the scanner tool.
+        // This tool is used to read input.
+    }
+}
+```
+Below is an example of a program which asks for user input, reads the string entered by the user, and then prints it.
+```java
+import java.util.Scanner;
+
+public class Program {
+
+    public static void main(String[] args) {
+        // Create a tool for reading user input and name it scanner
+        Scanner scanner = new Scanner(System.in);
+
+        // Print "Write a message: "
+        System.out.println("Type your user name: ");
+
+        // Read the string written by the user, and assign it
+        // to program memory "String message = (string that was given as input)"
+        String message = scanner.nextLine();
+
+        // Print the message written by the user
+        System.out.println(message);
+    }
+}
+
+```
+
+## Fundamentals of Strings
+As you might have noticed, in programming we refer to "strings" rather than "text". The term "string" is shorthand for "string of characters" which describes how the computer sees text on a more fundamental level: as a sequence of individual characters (char).
+
+We've so far used strings in two ways. When practicing the print command, we passed the string to be printed to the print command in quotation marks, and when practicing reading input, we saved the string we read to a variable.
+
+In practice, variables are named containers that contain information of some specified type and have a name. A string variable is declared in a program by stating the type of the variable (String) and its name (myString, for instance). Typically a variable is also assigned a value during its declaration. You can assign a value by following the declaration with an equals sign followed by the value and a semicolon.
+
+A string variable called message that is assigned the value "Hello world!" is declared like this:
+```java 
+String message = "Hello world!";
+```
+When a variable is created, a specific container is made available within the program, the contents of which can later be referenced. Variables are referenced by their name.
+```java 
+String message = "Hello world!";
+System.out.println(message);
+```
+### Concatenation 
+
 
 ## Variables
 
