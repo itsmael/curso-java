@@ -108,7 +108,7 @@ public class Program {
 
 ```
 
-## Fundamentals of Strings
+### Fundamentals of Strings
 As you might have noticed, in programming we refer to "strings" rather than "text". The term "string" is shorthand for "string of characters" which describes how the computer sees text on a more fundamental level: as a sequence of individual characters (char).
 
 We've so far used strings in two ways. When practicing the print command, we passed the string to be printed to the print command in quotation marks, and when practicing reading input, we saved the string we read to a variable.
@@ -125,8 +125,69 @@ String message = "Hello world!";
 System.out.println(message);
 ```
 ### Concatenation 
+You can join multiple strings using the + operator. Like :
+```java
+public class Program {
 
+    public static void main(String[] args) {
+        System.out.println("Hello " + "world!");
+    }
+}
+```
+Also you can join a variable with a string:
+```java
+public class Program {
 
+    public static void main(String[] args) {
+        String message = "Hello world!";
+
+        System.out.println(message + " ... and the universe!");
+    }
+}
+```
+### Reading Strings 
+The **reader.nextLine();** command reads the user's input and returns a string. If we then want to use the string in the program, it must be saved to a string variable — String message = scanner.nextLine();. A value saved to a variable can be used repeatedly. In the example below, the user input is printed twice.
+```java
+import java.util.Scanner;
+
+public class Program {
+
+    public static void main(String[] args) {
+
+        //Create the tool for reading, assign it to variable caller "scanner
+        Scanner scanner = new Scanner(System.in);
+
+        //Print user a message "Write a message: "
+        System.out.println("Write a message: ");
+
+        //Read the user's string input, save it to program memory
+        //"String message = (user input)"
+        String message = scanner.nextLine();
+
+        // Print the user input twice
+        System.out.println(message);
+        System.out.println(message);
+    }
+}
+```
+### Input String as a Part of Ouput 
+Using the same concept of concatenation we can input string as a part of output like the example below:
+```java
+import java.util.Scanner;
+
+public class Program {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Write something: ");
+
+        String message = scanner.nextLine();
+
+        System.out.println("You wrote " + message);
+    }
+}
+```
 ## Variables
 
 ## Calculating with numbers
