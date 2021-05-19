@@ -191,8 +191,109 @@ public class Program {
 
 
 ## Variables
+A variable can be thought of as a container in which information of a given type can be stored. Examples of these different types include text (String), whole numbers (int), floating-point numbers (double), and whether something is true or false (boolean). A value is assigned to a variable using the equals sign (=).
+
+Variable names are unique - no two variables can have the same name. The program in the following example is faulty as it attempts to create the variable pi twice. The variable is created the first time its declared.
+
+The variable type is stated when the variable is first declared. When a new value is assigned to the variable, the type is no longer declared.
+```java
+int value = 10;
+System.out.println(value);
+value = 4;
+System.out.println(value);
+```
+### Changing a Value Assigned to a Variable
+A variable exists from the moment of its declaration, and its initial value is preserved until another value is assigned to it. You can change a variable's value using a statement that comprises the variable name, an equals sign, and the new value to be assigned. Remember to keep in mind that the variable type is only stated during the initial variable declaration.
+```java
+int number = 123;
+System.out.println("The value of the variable is " + number);
+
+number = 42;
+System.out.println("The value of the variable is " + number);
+```
+### Variable's Type Persists
+Once a variable's type has been declared, it can no longer be changed. For example, a boolean value cannot be assigned to a variable of the integer type, nor can an integer be assigned to a variable of the boolean tpe.
+```java
+boolean integerAssignmentWillWork = false;
+integerAssignmentWillWork = 42; // Does not work
+
+int value = 10;
+integerAssignmentWillWork = value; // Neither does this
+```
+However, exceptions do exist: an integer can be assigned to a variable of the double type, since Java knows how to convert an integer to a double during assignment.
+```java
+double floatingPoint = 0.42;
+floatingPoint = 1; // Works
+
+int value = 10;
+floatingPoint = value; // Also works
+```
+A floating-point value cannot, however, be assigned to an integer variable. The reason for this is that those who develop the language aim to prevent developers from making errors that lead to a loss of information.
+### Naming Variables
+Naming variables is a fundamental aspect of describing a program. Let's look at two examples.
+```java
+double a = 3.14;
+double b = 22.0;
+double c = a * b * b;
+
+System.out.println(c);
+
+
+double pi = 3.14;
+double radius = 22.0;
+double surfaceArea = pi * radius * radius;
+
+System.out.println(surfaceArea);
+```
+Both of the preceding examples function the same way and output the same result. One of them is, however, much more understandable. The objective here is to compute the surface area of a circle. The value of pi is defined in the first row, the circle's radius in the second, and the surface area calculated in the third.
+
+### Reading Different Variable Types from User
+In the text-based user interfaces that we've used in our programs, the user's input is always read as a string, since the user writes their input as text. Reading strings from the user has become familiar by this point - we do it using the nextLine-command of the Scanner helper method.
+```java
+import java.util.Scanner;
+
+public class Program {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Write text and press enter ");
+        String text = scanner.nextLine();
+        System.out.println("You wrote " + text);
+    }
+}
+```
+Other input types, such as integers, doubles, and booleans are also read as text. However, they need to be converted to the target variable's type with the help of some tools provided by Java.
+
+### Reading Integers
+The Integer.valueOf command converts a string to an integer. It takes the string containing the value to be converted as a parameter.
+
+```java
+String valueAsString = "42";
+int value = Integer.valueOf(valueAsString);
+
+System.out.println(value);
+```
+When using a Scanner object, the reading of the value is usually inserted directly into the type conversion. This happens like so:
+```java
+import java.util.Scanner;
+
+public class Program {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Write a value ");
+        int value = Integer.valueOf(scanner.nextLine());
+        System.out.println("You wrote " + value);
+    }
+}
+```
+
+
+
+
 
 ## Calculating with numbers
 
 ## Conditional statements and conditional operation 
-
